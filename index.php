@@ -1,74 +1,47 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Шарики с PHP</title>
-    <style>
-        body {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-        }
-
-        .ball {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            color: white;
-            font-weight: bold;
-            user-select: none;
-        }
-    </style>
-</head>
-<body>
 <?php
-$data = [
-        'stats' => [
-                'visits' => [
-                        'today' => 120,
-                        'week' => 780,
-                        'month' => 3200,
-                        'history' => [
-                                ['date' => '2025-12-10', 'count' => 100],
-                                ['date' => '2025-12-11', 'count' => 150],
-                                ['date' => '2025-12-12', 'count' => 200],
-                        ]
-                ],
-                'sales' => [
-                        'products' => [
-                                ['id' => 101, 'name' => 'Товар A', 'sold' => 12],
-                                ['id' => 102, 'name' => 'Товар B', 'sold' => 7],
-                        ],
-                        'revenue' => [
-                                'today' => 5000,
-                                'week' => 35000
-                        ]
-                ]
-        ],
-        'misc' => [
-                'empty_array' => [],
-                'nested_empty' => [
-                        'level1' => [
-                                'level2' => []
-                        ]
-                ]
-        ]
+
+//$user = [
+//        "name" => "Шовхал",
+//        "age" => 25,
+//        "city" => "Евлах",
+//        "pogonyalo" => "Вентилятор",
+//        'test' => 'test2'
+//];
+//
+//// [name, age, city, pogonyalo, test];
+//$lomgede = array_keys($user);
+//
+//// 1 цыкл $key = name
+//// 2 цыкл $key = age
+//// 3 цыкл $key = city
+//// 4 цыкл $key = pogonyalo
+//// 5 цыкл $key = test
+//foreach ($user as $key => $value) {
+//    if (in_array($key, $lomgede)) {
+//        echo $key . ": " . $user[$key] . "<br>";
+//    }
+//}
+
+
+$array = [
+    'a' => ['b' => ['c' => [1, 2, 3]]],
+    'e' => ['z' => ['t' => [4, 5, 6]]],
+    1 => ['qwe' => ['tb' => [41, 35, 556, 99, 111 , 33, 123, 555 , 11, 55]]],
 ];
 
-echo '<pre>';
-foreach ($data['stats']['sales']['revenue'] as $key => $item) {
-    print_r($key . ' ' . $item . '<br>');
+function getNumbers(array $numbersArray, string $searchKey)
+{
+    foreach ($numbersArray as $number) {
+        foreach ($number as $value) {
+            foreach ($value as $key => $v) {
+                if($key == $searchKey){
+                    foreach ($v as $keyName => $denniDumay) {
+                        echo $keyName . '<br>';
+                    }
+                }
+            }
+        }
+    }
 }
-echo '</pre>';
-?>
 
-<!--<div class="ball" style="background-color: #2ecc71;">G</div>-->
-
-</body>
-</html>
+getNumbers($array, 'c');

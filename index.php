@@ -23,25 +23,98 @@
 //}
 
 
-$array = [
-    'a' => ['b' => ['c' => [1, 2, 3]]],
-    'e' => ['z' => ['t' => [4, 5, 6]]],
-    1 => ['qwe' => ['tb' => [41, 35, 556, 99, 111 , 33, 123, 555 , 11, 55]]],
-];
+//$a = [1, 2, 3];
+//$b = [4, 5, 6];
+//$c = [7, 8, 9, 10];
+//
+//$result = [
+//    array_sum($a) / count($a),
+//    array_sum($b) / count($b),
+//    array_sum($c) / count($c),
+//];
+//
+//print_r($result);
 
-function getNumbers(array $numbersArray, string $searchKey)
-{
-    foreach ($numbersArray as $number) {
-        foreach ($number as $value) {
-            foreach ($value as $key => $v) {
-                if($key == $searchKey){
-                    foreach ($v as $keyName => $denniDumay) {
-                        echo $keyName . '<br>';
-                    }
-                }
-            }
-        }
-    }
-}
+$teams = [
+    [
+        'team' => 'Barcelona',
+        'players' => [
+            ['first_name' => 'Lionel', 'last_name' => 'Messi'],
+            ['first_name' => 'Xavi', 'last_name' => 'Hernandez'],
+            ['first_name' => 'Andres', 'last_name' => 'Iniesta'],
+            ['first_name' => 'Gerard', 'last_name' => 'Pique'],
+            ['first_name' => 'Sergio', 'last_name' => 'Busquets'],
+        ],
+    ],
+    [
+        'team' => 'Real Madrid',
+        'players' => [
+            ['first_name' => 'Cristiano', 'last_name' => 'Ronaldo'],
+            ['first_name' => 'Luka', 'last_name' => 'Modric'],
+            ['first_name' => 'Toni', 'last_name' => 'Kroos'],
+            ['first_name' => 'Sergio', 'last_name' => 'Ramos'],
+            ['first_name' => 'Karim', 'last_name' => 'Benzema'],
+        ],
+    ],
+    [
+        'team' => 'Manchester United',
+        'players' => [
+            ['first_name' => 'Wayne', 'last_name' => 'Rooney'],
+            ['first_name' => 'Paul', 'last_name' => 'Scholes'],
+            ['first_name' => 'Ryan', 'last_name' => 'Giggs'],
+            ['first_name' => 'David', 'last_name' => 'Beckham'],
+            ['first_name' => 'Rio', 'last_name' => 'Ferdinand'],
+        ],
+    ],
+    [
+        'team' => 'Bayern Munich',
+        'players' => [
+            ['first_name' => 'Thomas', 'last_name' => 'Muller'],
+            ['first_name' => 'Manuel', 'last_name' => 'Neuer'],
+            ['first_name' => 'Joshua', 'last_name' => 'Kimmich'],
+            ['first_name' => 'Philipp', 'last_name' => 'Lahm'],
+            ['first_name' => 'Arjen', 'last_name' => 'Robben'],
+        ],
+    ],
+    [
+        'team' => 'Juventus',
+        'players' => [
+            ['first_name' => 'Alessandro', 'last_name' => 'Del Piero'],
+            ['first_name' => 'Gianluigi', 'last_name' => 'Buffon'],
+            ['first_name' => 'Andrea', 'last_name' => 'Pirlo'],
+            ['first_name' => 'Paulo', 'last_name' => 'Dybala'],
+            ['first_name' => 'Claudio', 'last_name' => 'Marchisio'],
+        ],
+    ],
+]; // Собрать новый массив где сделаем канкатенацию с фамилией и именем играков ,
+    // в результате далжны полуить такой же
+   // массив только не будет в массиве first_name и last_name , будет только full_name
 
-getNumbers($array, 'c');
+
+$cars = [
+    'BWM' => [
+        'color' => 'black',
+        'max_speed' => 320
+    ],
+    'BYD' => [
+        'color' => 'green',
+        'max_speed' => 496
+    ],
+    'Mercedes' => [
+        'color' => 'red',
+        'max_speed' => 240
+    ],
+    'Kia' => [
+        'color' => 'blue',
+        'max_speed' => 270
+    ],
+    'Hyundai' => [
+        'color' => 'white',
+        'max_speed' => 280
+    ]
+];  // Перебрать все машины и сумировать общую сумму скорости
+    // в переменну а также вывести в отдельной переменную среднее значение скорости
+    // всех машин а также добавитьк каждой
+    // машине какой марки и собрать отдельный массив с цветами машины
+
+// Также разобраться с тем что делали сегодня на уроке файл называется 27-12-2025
